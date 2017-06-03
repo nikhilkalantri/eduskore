@@ -11,10 +11,16 @@
 
 .intro .intro-slider .item.one {
     background: url(../images/introslider/slide1.jpg);
+    background-position: center;
+    background-size: contain;
+    /*background-repeat: no-repeat;*/
 }
 
 .intro .intro-slider .item.two {
     background: url(../images/introslider/slide2.jpg);
+    background-position: center;
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
 }
 
 .intro .intro-slider .item .background-image img {
