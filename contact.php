@@ -21,7 +21,7 @@ if(!isEmail($email)) {
 // Configuration option.
 // Enter the email address that you want to emails to be sent to.
 // Example $address = "joe.doe@yourdomain.com";
-$address = "barrydejong@gmail.com";
+$address = "nik999@gmail.com";
 
 
 // Configuration option.
