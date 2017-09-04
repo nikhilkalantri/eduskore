@@ -11,6 +11,9 @@ if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
 
 $email = $_POST['email'];
+$name = $_POST['name'];
+$phonenumber = $_POST['phonenumber'];
+$subject = $_POST['subject'];
 
 
 if(!isEmail($email)) {
@@ -35,9 +38,9 @@ $e_subject = 'Lamap completed enrollment form field';
 
 $e_body = "Completed enrollment email field" . PHP_EOL . PHP_EOL;
 $e_content = "There is an email address filled in from the Lamap website template. This user would like to be kept informed of new development about the app in the future.";
-$e_reply = "You can contact this user via email: $email";
+$e_reply = "You can contact this user via email: $email $name $phonenumber $subject";
 
-$msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
+$msg = wordwrap( $e_body . $e_content . $e_reply , 70 );
 
 $headers = "From: $email" . PHP_EOL;
 $headers .= "Reply-To: $email" . PHP_EOL;
