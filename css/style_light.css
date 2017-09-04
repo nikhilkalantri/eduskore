@@ -133,6 +133,10 @@ figure img {
   visibility: visible\9 !important;
 }
 
+.top-buffer {
+    margin-top: 5px;
+}
+
 /* Bootstrap Nav Tab Customize */
 .nav-tabs {
     border: none;
@@ -787,3 +791,4 @@ ul.extra-features i {
 .footer h4 {
     margin-bottom: 5px;
 }
+

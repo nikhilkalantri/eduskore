@@ -419,8 +419,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-head wow fadeInDown animated" data-wow-offset="10">
-					<h1>Newsletter</h1>
-					<p>Fill in your email address to receive monthly updates </p>
+					<h1>Contact Us</h1>
 					<span class="underline"></span>
 				</div>
 			</div>
@@ -433,14 +432,29 @@
 				<form method="post" action="contact.php" name="contactform" id="contactform">
 
 					<fieldset>
+						<div class="row">
+							<label for="Name"></label>
+							<input name="name" type="text" id="name" size="30" value="" placeholder="Please enter your name" />
+						</div>
+						<div clas="row top-buffer">
+							<label for="Phone Number"></label>
+							<input name="phonenumber" type="text" id="phonenumber" size="10" value="" placeholder="Please enter your phone number" />
+						</div>
 
-						<label for="email" accesskey="E"></label>
-						<input name="email" type="text" id="email" size="30" value="" placeholder="Please enter your email address" />
-
-						<button type="submit" class="submit btn btn-send" id="submit" value="Submit">
-							<i class="fa fa-envelope"></i>
-							Subscribe
-						</button>
+						<div clas="row top-buffer">
+							<label for="email" accesskey="E"></label>
+							<input name="email" type="text" id="email" size="30" value="" placeholder="Please enter your email address" />
+						</div>
+						<div clas="row top-buffer">
+							<label for="subject" accesskey="E"></label>
+							<input name="subject" type="text" id="subject" size="30" value="" placeholder="Please enter your subject" />
+						</div>
+						<div clas="row top-buffer">
+							<button type="submit" class="submit btn btn-send" id="submit" value="Submit">
+								<i class="fa fa-envelope"></i>
+								Submit
+							</button>
+						</div>
 
 					</fieldset>
 
