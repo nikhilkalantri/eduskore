@@ -17,13 +17,16 @@ $subject = $_POST['subject'];
 
 if(empty($name)) {
 	echo "Name is required";
+	exit();
 }
 
 if(empty($phonenumber)) {
 	echo "Phone number is required";
+	exit();
 } else {
 	if(!preg_match("/^[7-9]{1}[0-9]{9}$/", $phonenumber)) {
 		echo "Invalid phone number";
+		exit();
 	}
 }
 
