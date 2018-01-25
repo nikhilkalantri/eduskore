@@ -11,7 +11,24 @@ if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
 
 $email = $_POST['email'];
+$name = $_POST['name'];
+$phonenumber = $_POST['phonenumber'];
+$subject = $_POST['subject'];
 
+if(empty($name)) {
+	echo "Name is required";
+	exit();
+}
+
+if(empty($phonenumber)) {
+	echo "Phone number is required";
+	exit();
+} else {
+	if(!preg_match("/^[7-9]{1}[0-9]{9}$/", $phonenumber)) {
+		echo "Invalid phone number";
+		exit();
+	}
+}
 
 if(!isEmail($email)) {
 	echo 'You have enter an invalid e-mail address, try again.';
@@ -21,12 +38,12 @@ if(!isEmail($email)) {
 // Configuration option.
 // Enter the email address that you want to emails to be sent to.
 // Example $address = "joe.doe@yourdomain.com";
-$address = "barrydejong@gmail.com";
+$address = "nik999@gmail.com";
 
 
 // Configuration option.
 // Example, $e_subject = '$name . ' has contacted you via Your Website.';
-$e_subject = 'Lamap completed enrollment form field';
+$e_subject = 'Contact information for $name';
 
 
 // Configuration option.
@@ -35,9 +52,9 @@ $e_subject = 'Lamap completed enrollment form field';
 
 $e_body = "Completed enrollment email field" . PHP_EOL . PHP_EOL;
 $e_content = "There is an email address filled in from the Lamap website template. This user would like to be kept informed of new development about the app in the future.";
-$e_reply = "You can contact this user via email: $email";
+$e_reply = "You can contact this user via email: $email $name $phonenumber $subject";
 
-$msg = wordwrap( $e_body . $e_content . $e_reply, 70 );
+$msg = wordwrap( $e_body . $e_content . $e_reply , 70 );
 
 $headers = "From: $email" . PHP_EOL;
 $headers .= "Reply-To: $email" . PHP_EOL;
@@ -45,17 +62,18 @@ $headers .= "MIME-Version: 1.0" . PHP_EOL;
 $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
-if(mail($address, $e_subject, $msg, $headers)) {
 
-	// Email has sent successfully, echo a success page.
-	echo "<fieldset>";
-	echo "<div id='success_page'>";
-	echo "<p>Thank you, your email address has been submitted to us.</p>";
-	echo "</div>";
-	echo "</fieldset>";
+// if(mail($address, $e_subject, $msg, $headers)) {
 
-} else {
+// 	// Email has sent successfully, echo a success page.
+// 	echo "<fieldset>";
+// 	echo "<div id='success_page'>";
+// 	echo "<p>Thank you, your email address has been submitted to us.</p>";
+// 	echo "</div>";
+// 	echo "</fieldset>";
 
-	echo 'ERROR!';
+// } else {
 
-}
+// 	echo 'ERROR!';
+
+// }
